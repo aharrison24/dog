@@ -1,0 +1,15 @@
+Source: dog
+Section: text
+Priority: optional
+Maintainer: Norbert Tretkowski <nobse@debian.org>
+Build-Depends: debhelper (>= 4.0.0), dpatch
+Standards-Version: 3.7.2.2
+
+Package: dog
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Enhanced replacement for cat
+ dog writes the contents of each given file, URL or standard
+ input to standard output. It currently supports file, http
+ and raw URLs. It is designed as a compatible, but enhanced 
+ replacement for cat.

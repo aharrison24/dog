@@ -21,9 +21,9 @@ INSTALL = /usr/bin/install -c
 OBJS = dog.o getopt.o getopt1.o
 CFLAGS = -O3 -Wall
 
-prefix = /usr/local
+prefix = debian/dog/usr
 bindir = ${prefix}/bin
-mandir = ${prefix}/man
+mandir = ${prefix}/share/man
 
 %.o: %.c
 	gcc ${CFLAGS} -c $< -o $@

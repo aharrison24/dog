@@ -36,28 +36,20 @@
 #include <string.h>
 #include "getopt.h"
 #include <limits.h>
+#include <time.h>
 #include <netdb.h>
 
-// this is fun
-#if defined(__alpha)
-#define uint16	unsigned short
-#define int16	short
-#define uint32	unsigned int
-#define int32	int
-#define uint64	unsigned long
-#define int64	long
-#else
-#define uint16	unsigned short
-#define int16	short
-#define uint32	unsigned long
-#define int32	long
-#define uint64	unsigned long long
-#define int64	long long
-#endif
+#define uint16	uint16_t
+#define int16	int16_t
+#define uint32	uint32_t
+#define int32	int32_t
+#define uint64	uint64_t
+#define int64	int64_t
+
 #if defined(__STDC__)
 #define __dog_signed		signed
 #else
-#deifne __dog_signed
+#define __dog_signed
 #endif
 
 // config
@@ -1321,26 +1313,35 @@ static void WaitAndDump(int argc,char **argv,int sock)
   	InetSockAddr sa;
 	int newsock;
 	uint32 ipAddr;
-	int k;
+	socklen_t k;
 	time_t curr_time;
 	char curr_date[64];
 
 	k = sizeof(sa);
 	while ((newsock=accept(sock,(struct sockaddr*)&sa,&k)) != -1) {
 		if (!no_bind_header) {
+			char *result = NULL;
 			ipAddr = ntohl(sa.addr);
 			time(&curr_time);
-         strcpy(curr_date,ctime(&curr_time));
+			if (!(result = ctime(&curr_time))) {
+			    perror("ctime");
+			    goto done;
+			}
+			strncpy(curr_date, result, sizeof(curr_date) - 1);
 			while (!isalnum(curr_date[strlen(curr_date)-1])) {
 	         curr_date[strlen(curr_date)-1] = 0;
 			}
 			printf("# %s from %d.%d.%d.%d:%d\n",curr_date,(int)ipAddr>>24,(int)(ipAddr>>16)&0xff,(int)(ipAddr>>8)&0xff,(int)ipAddr&0xff,ntohs(sa.port));
  		}
-		straight_dump = newsock;
-		DumpThings(argc,argv,hang_up_bind ? -1 : newsock);
-		if (hang_up_bind) {
+
+		goto done;
+
+		done:
+		    straight_dump = newsock;
+		    DumpThings(argc,argv,hang_up_bind ? -1 : newsock);
+		    if (hang_up_bind) {
 			close(newsock);
-		}
+		    }
 	}
 }
 

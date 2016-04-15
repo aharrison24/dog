@@ -1,0 +1,87 @@
+dog (1.7-8) unstable; urgency=medium
+
+  * Applied patch from A. Costa which fixes some spelling errors.
+    (closes: #398471)
+
+ -- Norbert Tretkowski <nobse@debian.org>  Tue, 14 Nov 2006 07:46:50 +0100
+
+dog (1.7-7) unstable; urgency=low
+
+  * Fixed override disparity.
+
+ -- Norbert Tretkowski <nobse@debian.org>  Tue, 24 Jan 2006 20:42:33 +0100
+
+dog (1.7-6) unstable; urgency=low
+
+  * Switched to debhelper and dpatch.
+  * Corrected FSF address in copyright file.
+
+ -- Norbert Tretkowski <nobse@debian.org>  Tue, 24 Jan 2006 19:38:25 +0100
+
+dog (1.7-5) unstable; urgency=low
+
+  * Fixed problems on 64 bit architectures. (closes: #226551)
+
+ -- Norbert Tretkowski <nobse@debian.org>  Sun, 22 Jan 2006 01:28:33 +0100
+
+dog (1.7-4) unstable; urgency=low
+
+  * Bumped up Standards-Version.
+    - Removed /usr/doc link
+    - Added location of the GPL to copyright file
+
+ -- Norbert Tretkowski <nobse@debian.org>  Sat, 09 Aug 2003 10:21:16 +0200
+
+dog (1.7-3.1) unstable; urgency=low
+
+  * Corrected spelling error in description (closes: #124563).
+
+ -- Norbert Tretkowski <nobse@debian.org>  Sat, 16 Feb 2002 21:55:43 +0100
+
+dog (1.7-3) unstable; urgency=low
+
+  * Corrected maintainer e-mail address.
+
+ -- Norbert Tretkowski <nobse@debian.org>  Sun,  7 Apr 2001 14:22:31 +0200
+
+dog (1.7-2) unstable; urgency=low
+
+  * Fix for problem while compiling from source (closes: #70582).
+
+ -- Norbert Tretkowski <nobse@nobse.de>  Wed, 30 Aug 2000 22:31:44 +0200
+
+dog (1.7-1) unstable; urgency=low
+
+  * New Maintainer.
+
+ -- Norbert Tretkowski <nobse@nobse.de>  Thu, 22 Jun 2000 14:55:51 +0200
+
+dog (1.5-5) unstable; urgency=low
+
+  * Changed debian/rules to be faster and more portable.
+
+ -- Christian Kurz <shorty@getuid.com>  Mon, 15 May 2000 20:28:25 +0200
+
+dog (1.5-4) unstable; urgency=low
+
+  * Fixed the description (closes: #52599).
+
+ -- Christian Kurz <shorty@debian.org>  Mon, 13 Dec 1999 05:34:22 +0100
+
+dog (1.5-3) unstable; urgency=low
+
+  * Fixes for Lintian Bugs.
+
+ -- Christian Kurz <shorty@debian.org>  Mon, 11 Oct 1999 22:18:57 +0200
+
+dog (1.5-2) unstable; urgency=low
+
+  * Package is now FHS-compliant. 
+
+ -- Christian Kurz <shorty@debian.org>  Sun, 12 Sep 1999 13:21:32 +0200
+
+dog (1.5-1) unstable; urgency=low
+
+  * First Debian release.
+
+ -- Christian Kurz <shorty@debian.org>  Sun, 25  Jul 1999 23:19:01 +0200  
