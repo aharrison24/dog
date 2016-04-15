@@ -1,0 +1,25 @@
+Copyright (C) 1999-2000  Jason Cohen <dogboy@photodex.com>
+
+dog is better than cat
+
+REQUIREMENTS:
+-------------
+* Computer
+* Operating System
+* GCC (UNIX), DJGPP (DOS)
+
+To unpack:
+
+$ tar zxvf dog-1.7.tar.gz
+
+To build:
+
+$ cd dog-1.7
+$ make clean
+$ make
+
+To install:
+
+# make install
+
+done!
